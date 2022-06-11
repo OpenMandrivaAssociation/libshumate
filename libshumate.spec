@@ -68,8 +68,6 @@ This package contains development files for %{name}.
 %install
 %meson_install
 
-%ldconfig_scriptlets -n %{soname}
-
 %files -n %{soname}
 %license COPYING
 %{_libdir}/libshumate-%{somajor}.%{sominor}.so.*
