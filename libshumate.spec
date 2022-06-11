@@ -73,7 +73,7 @@ This package contains development files for %{name}.
 
 %files -n %{libname}
 %license COPYING
-%{_libdir}/libshumate-%{somajor}.%{api}.so.*
+%{_libdir}/libshumate-%{major}.%{api}.so.*
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/Shumate-%{major}.%{api}.typelib
