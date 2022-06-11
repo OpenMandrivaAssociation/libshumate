@@ -26,6 +26,7 @@ BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(libsoup-3.0) >= 3.0
 BuildRequires:  pkgconfig(sqlite3) >= 1.12.0
 BuildRequires:  pkgconfig(vapigen) >= 0.11.0
+BuildRequires:	glibc-static-devel
 
 %description
 libshumate is a C library providing a GtkWidget to display maps.
