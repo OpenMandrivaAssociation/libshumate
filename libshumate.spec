@@ -1,6 +1,9 @@
-%define somajor 1
-%define sominor 0
-%define soname libshumate-%{somajor}_%{sominor}-1
+%define major 1
+%define api 0
+
+%define libname %mklibname shumate %{api} %{major}
+%define devname %mklibname -d shumate %{api}
+%define girname %mklibname shumate-gir %{major}
 
 Name:           libshumate
 Version:        1.0.0.alpha.1
@@ -33,26 +36,26 @@ libshumate is named after Jessamine Shumate, an American artist,
 historian, and cartographer (Wikipedia). libshumate is forked from,
 and tries to follow similar principles in the API as libchamplain.
 
-%package -n %{soname}
+%package -n %{libname}
 Summary:        Shared library for %{name}
 
-%description -n %{soname}
+%description -n %{libname}
 C library providing a GtkWidget to display maps.
 This package contains the shared library files.
 
-%package -n typelib-1_0-Shumate-%{somajor}_%{sominor}
+%package -n %{girname}
 Summary:        Introspection file for %{name}
 
-%description -n typelib-1_0-Shumate-%{somajor}_%{sominor}
+%description -n %{girname}
 C library providing a GtkWidget to display maps.
 This package contains introspection file for %{name}.
 
-%package devel
+%package -n %{devname}
 Summary:        Development files for %{name}
-Requires:       %{soname} = %{version}
-Requires:       typelib-1_0-Shumate-%{somajor}_%{sominor} = %{version}
+Requires:	%{libname} = %{version}-%{release}
+Requires:	%{girname} = %{version}-%{release}
 
-%description devel
+%description -n %{devname}
 C library providing a GtkWidget to display maps.
 This package contains development files for %{name}.
 
@@ -68,19 +71,19 @@ This package contains development files for %{name}.
 %install
 %meson_install
 
-%files -n %{soname}
+%files -n %{libname}
 %license COPYING
-%{_libdir}/libshumate-%{somajor}.%{sominor}.so.*
+%{_libdir}/libshumate-%{somajor}.%{api}.so.*
 
-%files -n typelib-1_0-Shumate-%{somajor}_%{sominor}
-%{_libdir}/girepository-1.0/Shumate-%{somajor}.%{sominor}.typelib
+%files -n %{girname}
+%{_libdir}/girepository-1.0/Shumate-%{major}.%{api}.typelib
 
-%files devel
+%files -n %{devname}
 %doc AUTHORS README
-%{_datadir}/doc/libshumate-%{somajor}.%{sominor}/
-%{_includedir}/shumate-%{somajor}.%{sominor}/
-%{_libdir}/pkgconfig/shumate-%{somajor}.%{sominor}.pc
-%{_libdir}/libshumate-%{somajor}.%{sominor}.so
-%{_datadir}/gir-1.0/Shumate-%{somajor}.%{sominor}.gir
-%{_datadir}/vala/vapi/shumate-%{somajor}.%{sominor}.deps
-%{_datadir}/vala/vapi/shumate-%{somajor}.%{sominor}.vapi
+%{_datadir}/doc/libshumate-%{major}.%{api}/
+%{_includedir}/shumate-%{major}.%{api}/
+%{_libdir}/pkgconfig/shumate-%{major}.%{api}.pc
+%{_libdir}/libshumate-%{major}.%{api}.so
+%{_datadir}/gir-1.0/Shumate-%{major}.%{api}.gir
+%{_datadir}/vala/vapi/shumate-%{major}.%{api}.deps
+%{_datadir}/vala/vapi/shumate-%{major}.%{api}.vapi
