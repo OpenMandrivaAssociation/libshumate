@@ -67,8 +67,7 @@ This package contains development files for %{name}.
 export CC=gcc
 export CXX=g++
 %meson \
-	-D libsoup3=true \
-	%{nil}
+	-Dlibsoup3=true
 %meson_build
 
 %install
@@ -82,7 +81,7 @@ export CXX=g++
 %{_libdir}/girepository-1.0/Shumate-%{major}.%{api}.typelib
 
 %files -n %{devname}
-%doc AUTHORS README
+%doc AUTHORS README.md
 %{_datadir}/doc/libshumate-%{major}.%{api}/
 %{_includedir}/shumate-%{major}.%{api}/
 %{_libdir}/pkgconfig/shumate-%{major}.%{api}.pc
