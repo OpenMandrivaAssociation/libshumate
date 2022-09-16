@@ -72,7 +72,9 @@ This package contains development files for %{name}.
 %install
 %meson_install
 
-%files -n %{libname}
+%find_lang shumate1
+
+%files -n %{libname} -f shumate1.lang
 %license COPYING
 %{_libdir}/libshumate-%{major}.%{api}.so.*
 
