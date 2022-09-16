@@ -12,6 +12,7 @@ Summary:        C library providing a GtkWidget to display maps
 License:        LGPL-2.1-or-later
 URL:            https://wiki.gnome.org/Projects/libshumate
 Source:         https://gitlab.gnome.org/GNOME/libshumate/-/archive/%{version}/libshumate-%{version}.tar.bz2
+Patch0:		https://gitlab.gnome.org/GNOME/libshumate/-/merge_requests/136.patch
 
 BuildRequires:  gtk-doc >= 1.9
 BuildRequires:  meson >= 0.53.0
@@ -64,8 +65,6 @@ This package contains development files for %{name}.
 %autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
 %meson \
 	-Dlibsoup3=true
 %meson_build
