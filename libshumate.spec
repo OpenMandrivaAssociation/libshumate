@@ -6,13 +6,12 @@
 %define girname %mklibname shumate-gir %{major}
 
 Name:           libshumate
-Version:        1.0.0.beta
+Version:        1.0.1
 Release:        1
 Summary:        C library providing a GtkWidget to display maps
 License:        LGPL-2.1-or-later
 URL:            https://wiki.gnome.org/Projects/libshumate
 Source:         https://gitlab.gnome.org/GNOME/libshumate/-/archive/%{version}/libshumate-%{version}.tar.bz2
-Patch0:		https://gitlab.gnome.org/GNOME/libshumate/-/merge_requests/136.patch
 
 BuildRequires:  gtk-doc >= 1.9
 BuildRequires:  meson >= 0.53.0
