@@ -6,7 +6,7 @@
 %define girname %mklibname shumate-gir %{major}
 
 Name:           libshumate
-Version:        1.0.1
+Version:        1.0.2
 Release:        1
 Summary:        C library providing a GtkWidget to display maps
 License:        LGPL-2.1-or-later
