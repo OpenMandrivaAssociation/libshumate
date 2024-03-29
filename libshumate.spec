@@ -64,8 +64,7 @@ This package contains development files for %{name}.
 %autosetup -p1
 
 %build
-%meson \
-	-Dlibsoup3=true
+%meson
 %meson_build
 
 %install
