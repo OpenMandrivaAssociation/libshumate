@@ -15,6 +15,7 @@ Source:         https://gitlab.gnome.org/GNOME/libshumate/-/archive/%{version}/l
 
 BuildRequires:  gtk-doc >= 1.9
 BuildRequires:  meson >= 0.53.0
+BuildRequires:  gperf
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cairo) >= 1.4
 BuildRequires:  pkgconfig(gi-docgen) >= 2021.1
