@@ -67,6 +67,8 @@ This package contains development files for %{name}.
 %autosetup -p1
 
 %build
+export CC=gcc
+export CXX=g++
 %meson
 %meson_build
 
