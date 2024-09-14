@@ -28,6 +28,7 @@ BuildRequires:  pkgconfig(libsoup-3.0) >= 3.0
 BuildRequires:  pkgconfig(libprotobuf-c)
 BuildRequires:  pkgconfig(sqlite3) >= 1.12.0
 BuildRequires:  pkgconfig(vapigen) >= 0.11.0
+BuildRequires:  pkgconfig(harfbuzz-gobject)
 BuildRequires:	glibc-static-devel
 
 %description
