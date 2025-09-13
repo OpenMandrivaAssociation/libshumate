@@ -1,17 +1,21 @@
 %define major 1
 %define api 0
 
-%define libname %mklibname shumate %{api} %{major}
-%define devname %mklibname -d shumate %{api}
-%define girname %mklibname shumate-gir %{major}
+%define libname %mklibname shumate
+%define oldlibname %mklibname shumate 0 1
+%define devname %mklibname -d shumate
+%define olddevname %mklibname -d shumate 0
+%define girname %mklibname shumate-gir
+%define oldgirname %mklibname shumate-gir 1
 
 Name:           libshumate
-Version:        1.4.0
+Version:        1.5.0.1
 Release:        1
 Summary:        C library providing a GtkWidget to display maps
 License:        LGPL-2.1-or-later
 URL:            https://wiki.gnome.org/Projects/libshumate
-Source:         https://gitlab.gnome.org/GNOME/libshumate/-/archive/%{version}/libshumate-%{version}.tar.bz2
+#Source:         https://gitlab.gnome.org/GNOME/libshumate/-/archive/%{version}/libshumate-%{version}.tar.bz2
+Source0:        https://download.gnome.org/sources/libshumate/1.5/libshumate-%{version}.tar.xz
 
 BuildRequires:  gtk-doc >= 1.9
 BuildRequires:  meson >= 0.53.0
@@ -42,6 +46,7 @@ and tries to follow similar principles in the API as libchamplain.
 
 %package -n %{libname}
 Summary:        Shared library for %{name}
+%rename %{oldlibname}
 
 %description -n %{libname}
 C library providing a GtkWidget to display maps.
@@ -49,6 +54,7 @@ This package contains the shared library files.
 
 %package -n %{girname}
 Summary:        Introspection file for %{name}
+%rename %{oldgirname}
 
 %description -n %{girname}
 C library providing a GtkWidget to display maps.
@@ -58,6 +64,7 @@ This package contains introspection file for %{name}.
 Summary:        Development files for %{name}
 Requires:	%{libname} = %{EVRD}
 Requires:	%{girname} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 C library providing a GtkWidget to display maps.
