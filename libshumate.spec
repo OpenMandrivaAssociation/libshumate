@@ -10,7 +10,7 @@
 
 Name:           libshumate
 Version:        1.7.0
-Release:        2
+Release:        3
 Summary:        C library providing a GtkWidget to display maps
 License:        LGPL-2.1-or-later
 URL:            https://wiki.gnome.org/Projects/libshumate
